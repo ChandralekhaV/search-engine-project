@@ -5,6 +5,7 @@ from nltk.corpus import stopwords
 import os
 from collections import defaultdict
 import json
+import math
 
 # Download stopwords (only need to run once)
 nltk.download('punkt')
@@ -14,7 +15,7 @@ nltk.download('stopwords')
 stop_words = set(stopwords.words('english'))
 
 # Correct file path (Use raw string to avoid escape sequence issues)
-dataset_path = r"C:\Users\Chand\OneDrive\Desktop\Mechanics of Search\cranfield-trec-dataset-main\cranfield-trec-dataset-main\cran.all.1400.xml"  # Update this if needed
+dataset_path = r"C:\Users\Chand\OneDrive\Desktop\Mechanics of Search\Search Engine Assignment 1\cranfield-trec-dataset-main\cranfield-trec-dataset-main\cran.all.1400.xml" # Update this if needed
 
 # Check if file exists
 if not os.path.exists(dataset_path):
@@ -86,3 +87,20 @@ print("Inverted index saved successfully as 'inverted_index.json'")
 
 # Print a sample
 #print(list(index_data.items())[:5])
+
+
+
+# Compute TF values for each term in each document
+tf_index = {}
+
+for term, doc_list in inverted_index.items():
+    tf_index[term] = {}
+    for doc_id in doc_list:
+        tf_index[term][doc_id] = documents[doc_id].count(term) / len(documents[doc_id])
+
+# Save TF values to a JSON file
+with open("tf_index.json", "w", encoding="utf-8") as f:
+    json.dump(tf_index, f, indent=4)
+
+print("Term Frequency (TF) values saved as 'tf_index.json'")
+
