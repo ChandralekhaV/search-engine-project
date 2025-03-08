@@ -1,0 +1,47 @@
+# Requirements for Information Retrieval System
+
+## Dependencies for the Project
+The following Python libraries are required:
+
+```
+nltk                 # Text processing: tokenization, stopword removal, case normalization
+collections          # Default dictionaries for inverted index storage
+json                 # Handling structured index data (inverted index, ranking parameters)
+xml.etree.ElementTree # Parsing Cranfield dataset (XML format)
+math                 # Mathematical computations for ranking models
+pytrec_eval          # TREC evaluation metrics for retrieval effectiveness
+```
+
+## Installing Dependencies
+Run the following command to install all required dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+## Additional Requirements for Windows Users
+If you are running this project on **Windows** and need to compile `trec_eval`, install **MSYS2**:
+
+### **Installing MSYS2**
+1. **Download and install MSYS2** from [https://www.msys2.org](https://www.msys2.org).
+2. Open **MSYS2 UCRT64** terminal and run:
+   ```bash
+   pacman -S make gcc
+   ```
+   This installs `make` and `gcc` required to compile `trec_eval`.
+
+3. Navigate to the `tec_eval` folder and compile `trec_eval`:
+   ```bash
+   cd tec_eval
+   make
+   ```
+
+Now, you can run `trec_eval` on Windows just like in Linux.
+
+## Notes
+- **`nltk`**: Used for text preprocessing, including tokenization, stopword removal, and normalization.
+- **`pytrec_eval`**: Required for evaluating retrieval effectiveness using **trec_eval**.
+- **`json`**: Handles structured storage for indexing and retrieval processes.
+- **`math`**: Used in ranking model calculations, including BM25 and Jelinek-Mercer smoothing.
+
+
+
