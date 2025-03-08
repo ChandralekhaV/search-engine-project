@@ -21,13 +21,13 @@ The system indexes and retrieves documents from the **Cranfield dataset**, a sta
 
 ##  Directory Structure
 ```
-📁 search-engine-project/
-│── 📁 data/                # Contains the Cranfield dataset
+ search-engine-project/
+│──  data/                # Contains the Cranfield dataset
 │   ├── cran.all.1400.xml   # Cranfield dataset (documents)
 │   ├── cran.qry.xml   # queries used for retrieval evaluation
     ├── cranqrel.trec.txt   # Ground truth relevance file (Moved to tec_eval for evaluation)
 │
-│── 📁 tec_eval/            # Evaluation directory
+│──  tec_eval/            # Evaluation directory
 │   ├── vsm_results.txt     # Ranked results for VSM (Moved here after ranking)
 │   ├── bm25_results.txt    # Ranked results for BM25 (Moved here after ranking)
 │   ├── lm_results.txt      # Ranked results for LM (Moved here after ranking)
@@ -67,7 +67,7 @@ Example outputs:
 
 ---
 
-## ⚙️ **Installation & Setup**
+##  **Installation & Setup**
 ### **1️. Install Dependencies**
 Ensure you have Python installed, then install required libraries.
 
@@ -116,9 +116,9 @@ The effectiveness of each ranking model is measured using `trec_eval`. Summary o
 | **P@5**     | 0.1058  | 0.1893  | 0.1138  |
 | **NDCG@10** | 0.1390  | 0.2448  | 0.1486  |
 
-🔹 **BM25 consistently outperforms VSM and LM, ranking relevant documents higher.**  
-🔹 **Jelinek-Mercer LM has better recall but lower ranking precision.**  
-🔹 **VSM is competitive but suffers from document length bias.**
+ **BM25 consistently outperforms VSM and LM, ranking relevant documents higher.**  
+ **Jelinek-Mercer LM has better recall but lower ranking precision.**  
+ **VSM is competitive but suffers from document length bias.**
 
 ---
 
