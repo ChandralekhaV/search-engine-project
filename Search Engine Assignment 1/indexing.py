@@ -2,11 +2,11 @@ import xml.etree.ElementTree as ET
 import nltk
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
+from nltk.stem import PorterStemmer
 import os
 from collections import defaultdict
 import json
 import math
-
 
 ###Inverted Indexing
 
@@ -23,7 +23,7 @@ if not os.path.exists(dataset_path):
     print("Error: XML file not found. Check the path.")
     exit()
 
-# Reading the file and wraping it inside a root element
+# Reading the file and wrapping it inside a root element
 with open(dataset_path, "r", encoding="utf-8") as file:
     xml_content = file.read()
 
@@ -39,6 +39,7 @@ except ET.ParseError as e:
     exit()
 
 # Initializing dictionary for storing documents
+stemmer = PorterStemmer()
 documents = {}
 
 # Extracting document ID and text
@@ -50,7 +51,7 @@ for doc in root.findall("doc"):  # Now <doc> elements are inside <root>
     abstract = abstract_element.text.strip() if abstract_element is not None and abstract_element.text else ""
     content = f"{title} {abstract}"
     tokens = word_tokenize(content.lower())
-    tokens = [word for word in tokens if word.isalnum() and word not in stop_words]
+    tokens = [stemmer.stem(word) for word in tokens if word.isalnum() and word not in stop_words]  # Apply stemming
     documents[doc_id] = tokens
 
 # Building Inverted Index
@@ -59,7 +60,6 @@ for doc_id, words in documents.items():
     for word in words:
         inverted_index[word].add(doc_id)
 
-
 print("Sample indexed words:", list(inverted_index.items())[:5])
 
 # Saving inverted index as a JSON file
@@ -67,7 +67,6 @@ with open("inverted_index.json", "w", encoding="utf-8") as f:
     json.dump({k: list(v) for k, v in inverted_index.items()}, f, indent=4)
 
 print("Inverted index saved successfully as 'inverted_index.json'")
-
 
 ###VSM
 
@@ -85,7 +84,6 @@ with open("tf_index.json", "w", encoding="utf-8") as f:
 
 print("Term Frequency (TF) values saved as 'tf_index.json'")
 
-
 ###BM25
 
 # Computing document lengths
@@ -102,7 +100,6 @@ with open("bm25_data.json", "w", encoding="utf-8") as f:
     json.dump(bm25_data, f, indent=4)
 
 print("BM25 Data (Document Lengths & Avg Length) saved as 'bm25_data.json'")
-
 
 ###Language Model [Jelinek-Mercer Smoothing]
 
@@ -126,7 +123,4 @@ lm_data = {
 with open("lm_data.json", "w", encoding="utf-8") as f:
     json.dump(lm_data, f, indent=4)
 
-print(" Language Model Data (Corpus Probabilities) saved as 'lm_data.json'")
-
-
-
+print("Language Model Data (Corpus Probabilities) saved as 'lm_data.json'")
