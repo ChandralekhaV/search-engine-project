@@ -1,6 +1,6 @@
-# Requirements for Information Retrieval System
+Requirements for Information Retrieval System
 
-## Dependencies for the Project
+Dependencies for the Project
 The following Python libraries are required:
 
 ```
@@ -12,18 +12,18 @@ math                 # Mathematical computations for ranking models
 pytrec_eval          # TREC evaluation metrics for retrieval effectiveness
 ```
 
-## Installing Dependencies
+Installing Dependencies
 Run the following command to install all required dependencies:
 ```bash
 pip install -r requirements.txt
 ```
 
-## Additional Requirements for Windows Users
+Additional Requirements for Windows Users
 If you are running this project on **Windows** and need to compile `trec_eval`, install **MSYS2**:
 
-### **Installing MSYS2**
-1. **Download and install MSYS2** from [https://www.msys2.org](https://www.msys2.org).
-2. Open **MSYS2 UCRT64** terminal and run:
+Installing MSYS2
+1. Download and install MSYS2 from [https://www.msys2.org](https://www.msys2.org).
+2. Open MSYS2 UCRT64 terminal and run:
    ```bash
    pacman -S make gcc
    ```
@@ -37,11 +37,11 @@ If you are running this project on **Windows** and need to compile `trec_eval`, 
 
 Now, you can run `trec_eval` on Windows just like in Linux.
 
-## Notes
-- **`nltk`**: Used for text preprocessing, including tokenization, stopword removal, and normalization.
-- **`pytrec_eval`**: Required for evaluating retrieval effectiveness using **trec_eval**.
-- **`json`**: Handles structured storage for indexing and retrieval processes.
-- **`math`**: Used in ranking model calculations, including BM25 and Jelinek-Mercer smoothing.
+Notes
+- `nltk`: Used for text preprocessing, including tokenization, stopword removal, and normalization.
+- `pytrec_eval`: Required for evaluating retrieval effectiveness using **trec_eval**.
+- `json`: Handles structured storage for indexing and retrieval processes.
+- `math`: Used in ranking model calculations, including BM25 and Jelinek-Mercer smoothing.
 
 
 
