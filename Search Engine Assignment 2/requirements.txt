@@ -1,0 +1,11 @@
+flask
+nltk
+tqdm
+requests
+beautifulsoup4
+Pillow
+regex
+openai-clip
+torch
+transformers
+scikit-learn

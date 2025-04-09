@@ -28,6 +28,3 @@ P_100                 	all	0.0414
 P_200                 	all	0.0255
 P_500                 	all	0.0123
 P_1000                	all	0.0068
-ndcg_cut_5            	all	0.2254
-ndcg_cut_10           	all	0.2448
-ndcg_cut_20           	all	0.2783

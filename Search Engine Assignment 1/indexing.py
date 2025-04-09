@@ -51,7 +51,7 @@ for doc in root.findall("doc"):  # Now <doc> elements are inside <root>
     abstract = abstract_element.text.strip() if abstract_element is not None and abstract_element.text else ""
     content = f"{title} {abstract}"
     tokens = word_tokenize(content.lower())
-    tokens = [stemmer.stem(word) for word in tokens if word.isalnum() and word not in stop_words]  # Apply stemming
+    #tokens = [stemmer.stem(word) for word in tokens if word.isalnum() and word not in stop_words] #apply stemming 
     documents[doc_id] = tokens
 
 # Building Inverted Index
