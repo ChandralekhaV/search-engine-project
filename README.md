@@ -8,7 +8,7 @@ Implements an IR system on the Cranfield dataset using:
 - BM25
 - Language Modeling
 
-🔗 [See Assignment 1 README](Searcg Engine assignment1/README.md)
+🔗 [See Assignment 1 README](README.md)
 
 ---
 
@@ -19,4 +19,4 @@ A domain-specific visual image search engine built using:
 - BM25 + CLIP re-ranking
 - Flask-based web interface
 
-🔗 [See Assignment 2 README](assignment2/README.md)
+🔗 [See Assignment 2 README](README.md)
