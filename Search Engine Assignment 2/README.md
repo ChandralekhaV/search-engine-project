@@ -65,4 +65,4 @@ Try These Queries -
 
 ###  **Developed by:**  
 **Chandralekha Venkatesh Perumal**  
-[LinkedIn](www.linkedin.com/in/chandralekha-v) | [GitHub](https://github.com/ChandralekhaV) | [Email](mailto:chandralekha.venkateshperumal2@mail.dcu.ie)
+[LinkedIn](https://www.linkedin.com/in/chandralekha-v/) | [GitHub](https://github.com/ChandralekhaV) | [Email](mailto:chandralekha.venkateshperumal2@mail.dcu.ie)
