@@ -147,4 +147,4 @@ This project is licensed under the **MIT License**. Feel free to modify and use 
 
 ###  **Developed by:**  
 **Chandralekha Venkatesh Perumal**  
-[LinkedIn](www.linkedin.com/in/chandralekha-v) | [GitHub](https://github.com/ChandralekhaV) | [Email](mailto:chandralekha.venkateshperumal2@mail.dcu.ie)
+[LinkedIn](https://www.linkedin.com/in/chandralekha-v/) | [GitHub](https://github.com/ChandralekhaV) | [Email](mailto:chandralekha.venkateshperumal2@mail.dcu.ie)
