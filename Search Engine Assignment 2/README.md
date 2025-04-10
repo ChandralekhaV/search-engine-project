@@ -23,9 +23,9 @@ This project implements a lightweight image search engine focused on animal-rela
 2️. **Install Dependencies**
     ```bash
     pip install -r requirements.txt
-    To use CLIP:
-    ```bash
-    pip install git+https://github.com/openai/CLIP.git
+    **To use CLIP:**
+       ```bash
+      pip install git+https://github.com/openai/CLIP.git
 
 3. **Crawl and collect images**  
    ```bash
