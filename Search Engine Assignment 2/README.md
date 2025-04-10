@@ -60,3 +60,9 @@ Try These Queries -
 ![Search Result](screenshots/hare.png)
 ![Search Result](screenshots/capra.png)
 ![Search Result](screenshots/frog.png)
+
+
+
+###  **Developed by:**  
+**Chandralekha Venkatesh Perumal**  
+[LinkedIn](www.linkedin.com/in/chandralekha-v) | [GitHub](https://github.com/ChandralekhaV) | [Email](mailto:chandralekha.venkateshperumal2@mail.dcu.ie)
