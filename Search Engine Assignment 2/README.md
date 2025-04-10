@@ -16,7 +16,7 @@ This project implements a lightweight image search engine focused on animal-rela
 
 ## How to Run
 1️. **Clone the Repository**
-   git clone https://github.com/your-username/search-engine-project
+   git clone https://github.com/ChandralekhaV/search-engine-project/tree/main/Search%20Engine%20Assignment%202
    cd search-engine-project/assignment2
 
 2️. **Install Dependencies**
