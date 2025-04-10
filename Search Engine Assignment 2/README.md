@@ -21,9 +21,10 @@ This project implements a lightweight image search engine focused on animal-rela
    cd search-engine-project/assignment2
 
 2️. **Install Dependencies**
+    
+    
     ```bash
     pip install -r requirements.txt
-    
     
     To use CLIP:
       
