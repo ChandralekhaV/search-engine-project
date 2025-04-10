@@ -87,7 +87,7 @@ def bm25_search(query, top_k=20):
             denominator = tf + k1 * (1 - b + b * doc_len / avg_doc_length)
             scores[doc_id] += idf_score * (numerator / (denominator + 1e-6))
 
-    ranked = sorted(scores.items(), key=lambda x: x[1], reverse=True)[:50]
+    ranked = sorted(scores.items(), key=lambda x: x[1], reverse=True)[:5]
 
     # Group and pick best image per source page
     grouped = defaultdict(list)
@@ -144,12 +144,22 @@ def bm25_search(query, top_k=20):
         else:
             res["clip_score"] = 0.0
 
-    # Combine BM25 and CLIP score (weighted)
+       # Combine BM25 and CLIP score (weighted) + boost exact animal name match
     for res in results:
-        res["final_score"] = res["score"] + 2.5 * res["clip_score"]
+        bm25_score = res.get("score", 0.0)
+        clip_score = res.get("clip_score", 0.0)
+        base_score = 0.5 * bm25_score + 10.0 * clip_score
 
-    results = sorted(results, key=lambda x: x["final_score"], reverse=True)
+        animal_name = res.get("animal_name", "").lower()
+        if query.lower() in animal_name:
+            base_score += 3.0  # ✅ Boost if query matches animal name
+
+        res["final_score"] = base_score
+
+    # Safe sorting using final_score
+    results = sorted(results, key=lambda x: x.get("final_score", 0), reverse=True)
     return results[:top_k]
+
 
 @app.route("/", methods=["GET", "POST"])
 def index():
