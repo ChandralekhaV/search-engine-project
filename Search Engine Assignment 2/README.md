@@ -15,28 +15,46 @@ This project implements a lightweight image search engine focused on animal-rela
 ---
 
 ## How to Run
+1️. **Clone the Repository**
+   git clone https://github.com/your-username/search-engine-project
+   cd search-engine-project/assignment2
 
-1. **Crawl and collect images**  
+2️. **Install Dependencies**
+    ```bash
+    pip install -r requirements.txt
+    To use CLIP:
+    ```bash
+    pip install git+https://github.com/openai/CLIP.git
+
+3. **Crawl and collect images**  
    ```bash
    python crawler.py
-2. **Index images for BM25 search**
+This gathers images and metadata into image_surrogates.json
+
+4. **Index images for BM25 search**
+    ```bash
     python indexer.py
-3. **Generate CLIP embeddings**
+Generates BM25 indexes for text-based search
+
+5. **Generate CLIP embeddings**
+    ```bash
     python embed_images.py
-4. **Launch the web interface**
+Creates image_embeddings.json for re-ranking
+
+6. **Launch the web interface**
+     ```bash
      python app.py
+Then visit http://127.0.0.1:5000 in your browser
 
 
-Then visit http://127.0.0.1:5000
 
 Try These Queries - 
         hare, capra, frog, deer, civet, kudu, rabbit, wolf, savanna, mongoose, sheep, leopard 
 
 ### Homepage  
-![Homepage](screenshots\Webpage.png)
+![Homepage](screenshots/Webpage.png)
 
 ### Search Example  
 ![Search Result](screenshots/hare.png)
 ![Search Result](screenshots/capra.png)
 ![Search Result](screenshots/frog.png)
-
