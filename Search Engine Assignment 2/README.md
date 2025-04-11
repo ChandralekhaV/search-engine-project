@@ -17,14 +17,16 @@ This project implements a lightweight image search engine focused on animal-rela
 ## How to Run
 1️. **Clone the Repository**
    git clone https://github.com/ChandralekhaV/search-engine-project/tree/main/Search%20Engine%20Assignment%202
+
    cd search-engine-project/assignment2
 
 2️. **Install Dependencies**
-    ```bash
+    
     pip install -r requirements.txt
+    
     To use CLIP:
-    ```bash
-    pip install git+https://github.com/openai/CLIP.git
+      
+      pip install git+https://github.com/openai/CLIP.git
 
 3. **Crawl and collect images**  
    ```bash
@@ -58,3 +60,9 @@ Try These Queries -
 ![Search Result](screenshots/hare.png)
 ![Search Result](screenshots/capra.png)
 ![Search Result](screenshots/frog.png)
+
+
+
+###  **Developed by:**  
+**Chandralekha Venkatesh Perumal**  
+[LinkedIn](https://www.linkedin.com/in/chandralekha-v/) | [GitHub](https://github.com/ChandralekhaV) | [Email](mailto:chandralekha.venkateshperumal2@mail.dcu.ie)
