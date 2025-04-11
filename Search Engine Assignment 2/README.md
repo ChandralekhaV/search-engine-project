@@ -63,6 +63,25 @@ Try These Queries -
 
 
 
+## Quantitative Results
+
+To assess the system’s effectiveness in a measurable way, a quantitative evaluation (`evaluate.py`) was conducted using a filtered subset of 153 animal-related queries (e.g., *deer*, *rabbit*, *leopard*). Each query was matched against a corresponding set of relevant images in a custom-built ground truth file (`ground_truth_filtered.json`), and three standard evaluation metrics were computed:
+
+- **Mean Average Precision (MAP)** – Reflects the average precision across ranked relevant documents for each query.
+- **Precision@5** – Measures the proportion of relevant results in the top 5 images.
+- **Precision@10** – Measures relevance among the top 10 images.
+
+| Metric                     | Score   |
+|----------------------------|---------|
+| Mean Average Precision (MAP) | 0.2642  |
+| Precision@5               | 0.0667  |
+| Precision@10              | 0.0333  |
+
+> **Table 1**: Evaluation metrics over 153 filtered animal-related queries
+
+While the MAP score indicates promising overall ranking behavior, early precision remains modest. This can be attributed to the limited dataset size, metadata quality, and the challenge of matching short queries to noisy real-world image data.
+
+
 ###  **Developed by:**  
 **Chandralekha Venkatesh Perumal**  
 [LinkedIn](https://www.linkedin.com/in/chandralekha-v/) | [GitHub](https://github.com/ChandralekhaV) | [Email](mailto:chandralekha.venkateshperumal2@mail.dcu.ie)
